@@ -1,0 +1,16 @@
+Vivado Simulator 2018.3
+Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2018.3/bin/unwrapped/win64.o/xelab.exe -wto aa5ae585b6084d87a77b3a2d9c2b25b9 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot TB_VGA_Output_behav xil_defaultlib.TB_VGA_Output xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "C:/Users/User/Documents/GitHub/ee460m_lab5b/EE460M_Lab5B.srcs/sources_1/new/TOP.v" Line 1. Module VGA_Output doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/User/Documents/GitHub/ee460m_lab5b/EE460M_Lab5B.srcs/sources_1/new/clk_generator_25MHz.v" Line 1. Module clk_generator_25MHz doesn't have a timescale but at least one module in design has a timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.clk_generator_25MHz
+Compiling module xil_defaultlib.VGA_Output
+Compiling module xil_defaultlib.TB_VGA_Output
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot TB_VGA_Output_behav

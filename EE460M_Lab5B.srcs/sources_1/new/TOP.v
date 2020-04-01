@@ -19,6 +19,17 @@ clk_generator_25MHz cg25MHz(
 reg [9:0] Hcount;
 reg [9:0] Vcount;
 
+initial begin
+    Hsync = 1'b1;
+    Vsync = 1'b1;
+    Hcount = 10'b0000000000;
+    Vcount = 10'b0000000000;
+    vgaRed = 4'h0;
+    vgaBlue = 4'h0;
+    vgaGreen = 4'h0;
+end
+
+//always@(posedge clk_25MHz)
 always@(posedge clk)
 begin
 

@@ -1,0 +1,13 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  \
+"../../../../EE460M_Lab5B.srcs/sources_1/new/TOP.v" \
+"../../../../EE460M_Lab5B.srcs/sources_1/new/clk_generator_25MHz.v" \
+
+sv xil_defaultlib  \
+"../../../../../../Senior_Bachelors_Spring/460M/TB_VGA_Output.sv" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort
