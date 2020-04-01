@@ -22,37 +22,68 @@ reg [9:0] Vcount;
 always@(posedge clk)
 begin
 
- case(sw)
-       0: begin
-       //black
-        vgaRed=0;
-        
-       end
-       1:begin
-       //blue
-       end
-       2:begin
-       //brown
-       end
-       4:begin
-       //cyan
-       end
-       8:begin
-       //red
-       end
-       16:begin
-       //magenta
-       end
-       32:begin
-       //yellow
-       end
-       64:begin
-       //white
-       end
-       default:begin
-       //black
-       end
-   endcase
+    if((Hcount < 640) && (Vcount < 480)) begin
+        case(sw)
+            0: begin
+                //black
+                vgaRed=4'h0;
+                vgaGreen = 4'h0;
+                vgaBlue = 4'h0;
+            end
+            1:begin
+                //blue
+                vgaRed = 4'h0;
+                vgaGreen = 4'h0;
+                vgaBlue = 4'hF;
+            end
+            2:begin
+                //brown
+                vgaRed = 4'h3;
+                vgaGreen = 4'h3;
+                vgaBlue = 4'h3;
+            end
+            4:begin
+                //cyan
+                vgaRed = 4'h7;
+                vgaGreen = 4'hF;
+                vgaBlue = 4'hF;
+            end
+            8:begin
+                //red
+                vgaRed = 4'hF;
+                vgaGreen = 4'h0;
+                vgaBlue = 4'h0;
+            end
+            16:begin
+                //magenta
+                vgaRed = 4'hF;
+                vgaGreen = 4'h0;
+                vgaBlue = 4'hF;
+            end
+            32:begin
+                //yellow
+                vgaRed = 4'hF;
+                vgaGreen = 4'hF;
+                vgaBlue = 4'hF;
+            end
+            64:begin
+                //white
+                vgaRed = 4'hF;
+                vgaGreen = 4'hF;
+                vgaBlue = 4'hF;
+            end
+            default:begin
+                //black
+                vgaRed = 4'h0;
+                vgaGreen = 4'h0;
+                vgaBlue = 4'h0;
+            end
+        endcase
+    end else begin
+        vgaRed = 0;
+        vgaGreen = 0;
+        vgaBlue = 0;
+    end
 
     case(Hcount)
         0: begin
@@ -76,9 +107,6 @@ begin
         end
         640:begin
             Hcount = Hcount + 1;
-            vgaRed=0;
-            vgaBlue=0;
-            vgaGreen=0;
         end
         659: begin
             Hsync = 1'b0;
@@ -95,8 +123,6 @@ begin
             Hcount = Hcount + 1;
         end
     endcase
-
-
 
 end
 endmodule
